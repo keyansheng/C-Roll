@@ -2,6 +2,8 @@
 
 An original iPhone camera prototype inspired by [Log Cam's RAW-to-video approach](https://apps.apple.com/us/app/log-cam-open-gate-by-raw-cam/id6766185881). Built in SwiftUI, AVFoundation, Core Image, and Metal, with no third-party dependencies. The initial hardware target is **iPhone 16 Pro, iOS 18 or newer**.
 
+For an independent critique, start with the [Gemini code review handoff](docs/GEMINI_REVIEW.md).
+
 This is a working first implementation, not feature parity with Log Cam. The recording path requests **Bayer RAW photos**, develops their buffers, and encodes movies. The hardware recording monitor uses Apple's standard video feed when available to avoid a second RAW render. Version 0.1.2 uses the earlier sensor settings and two-frame bound, and defers the video-preview connection until idle RAW captures finish at take start. User-reported throughput on iPhone 16 Pro is approximately **25 fps at full HD and 22 fps at 4K**; the 30 fps target is not yet achieved. The simulator generates clearly labelled synthetic frames.
 
 ## Run on your iPhone
